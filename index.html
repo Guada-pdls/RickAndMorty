@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar p-2" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="https://bulma.io">
+            <img src="img/logo.png" alt="Rick and Morty logo" />
+            <h4 class="title is-4 ml-2">Rick and Morty</h4>
+          </a>
+
+          <a
+            role="button"
+            class="navbar-burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navMenu"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div class="navbar-end navbar-menu" id="navMenu">
+          <a class="navbar-item">Episodes</a>
+          <a class="navbar-item">Characters</a>
+          <a class="navbar-item">Locations</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro">
+        <h1 class="title is-1 px-1">Rick and Morty</h1>
+        <p class="px-2">
+          The Emmy award-winning half-hour animated hit comedy series on Adult
+          Swim that follows a sociopathic genius scientist who drags his
+          inherently timid grandson on insanely dangerous adventures across the
+          universe.
+        </p>
+
+        <div class="field pt-5">
+          <p class="control has-icons-left">
+            <input class="input is-primary type="text" 
+            placeholder="Search episodes, characters or locations" />
+            <span class="icon is-small is-left">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+          </p>
+          <button class="button is-primary">Search</button>
+        </div>
+      </section>
+      <section class="characters">
+        <h2 class="title is-4 px-2">Characters</h2>
+        <div
+          class="carousel-container"
+          style="overflow-x: auto; white-space: nowrap; padding-bottom: 1rem" 
+          id="characters"
+        >
+        </div>
+        <div class="has-text-centered mt-4">
+          <a href="/characters" class="button is-link">View More</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/navbar.js"></script>
+    <script src="js/characters.js"></script>
+  </body>
+</html>

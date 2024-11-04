@@ -1,0 +1,55 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css";
+
+:root {
+  --bulma-primary-h: 104deg;
+  --bulma-primary-s: 62%;
+  --bulma-primary-l: 54%;
+}
+
+/* Navbar */
+
+.navbar {
+  border-bottom: 1px solid #3a3a3a;
+}
+
+.navbar-burger span {
+  background-color: #fff;
+}
+
+.navbar-item img {
+  max-height: 42px;
+}
+
+/* Intro */
+
+.intro {
+  background-image: url(img/bg.avif);
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: overlay;
+  padding: 20vh 2rem 2rem 2rem;
+}
+
+.intro .title {
+  margin-bottom: 1rem;
+}
+
+.field {
+  display: flex;
+}
+
+.field input {
+  width: calc(100vw - 16vw - 5rem) !important;
+}
+
+.field button {
+  width: 16vw;
+}
+
+/* Characters */
+
+.characters {
+  padding: 2rem 2rem;
+}
