@@ -96,6 +96,12 @@
   margin-bottom: 0.2rem;
 }
 
+.carousel-container {
+  overflow-x: auto; 
+  white-space: nowrap; 
+  padding-bottom: 1rem
+}
+
 /* Character details */
 
 .Dead,
@@ -121,7 +127,8 @@
 }
 
 .detail-icon {
+  display: inline-block;
   background-color: #244636;
   border-radius: 8px;
-
+  padding: .5rem .7rem;
 }

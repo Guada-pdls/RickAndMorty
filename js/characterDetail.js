@@ -14,11 +14,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const characterDetails = document.getElementById("character-details");
     characterDetails.innerHTML = `
-      <div class="has-text-centered">
+        <div class="has-text-centered">
           <figure class="image m-auto is-128x128">
-            <img class="is-rounded" src="${character.image}" alt="${
-                character.name
-            }">
+            <img class="is-rounded" src="${character.image}" alt="${character.name}">
           </figure>
           <h2 class="title is-3 mt-2">${character.name}</h2>
           <p class="subtitle mt-1 is-5 species">${character.species}</p>
@@ -26,31 +24,55 @@ document.addEventListener("DOMContentLoaded", async () => {
             <span class="${character.status}"></span>
             <span class="status">${character.status}</span>
           </p>
-      </div>
-
-      <div class="info">
-        <h4 class="title is-5">Gender</h4>
-        <p class="mb-5">
-            <span class="detail-icon py-2 px-3 mr-2">${characterGenderIcon}</span>
+        </div>
+  
+        <div class="info my-2">
+          <h4 class="title is-4">Gender</h4>
+          <p class="mb-5">
+            <span class="detail-icon mr-2">${characterGenderIcon}</span>
             ${character.gender}
-        </p>
-        <h4 class="title is-5">Origin</h4>
-        <p class="mb-5">
-            <span class="detail-icon py-2 px-3 mr-2"><i class="fa-solid fa-location-dot fa-lg"></i></span>
+          </p>
+          <h4 class="title is-4">Origin</h4>
+          <p class="mb-5">
+            <span class="detail-icon mr-2">
+              <i class="fa-solid fa-location-dot fa-lg"></i>
+            </span>
             ${character.origin.name}
-        </p>
-        <h4 class="title is-5">Current Location</h4>
-        <p class="mb-5">
-        <span class="detail-icon py-2 px-3 mr-2"><i class="fa-solid fa-location-crosshairs fa-lg"></i></span>
+          </p>
+          <h4 class="title is-4">Current Location</h4>
+          <p class="mb-5">
+            <span class="detail-icon mr-2">
+              <i class="fa-solid fa-location-crosshairs fa-lg"></i>
+            </span>
             ${character.location.name}
-        </p>
-      </div>
+          </p>
+          <h4 class="title is-4">Episodes Appeared In</h4>
+          <div id="episodes-list" class="mb-5 carousel-container"></div>
+        </div>
 
-      <h4 class="title is-5">Episodes Appeared In</h4>
-      <ul>
-        ${character.episode.map((ep) => `<li>${ep}</li>`).join("")}
-      </ul>
-    `;
+      `;
+
+    // Fetch and display episodes
+    const episodesList = document.getElementById("episodes-list");
+
+    // Extract episode IDs from URLs
+    const episodeIds = character.episode
+      .map((epUrl) => epUrl.split("/").pop())
+      .join(",");
+
+    const episodesResponse = await fetch(
+      `https://rickandmortyapi.com/api/episode/${episodeIds}`
+    );
+    const episodes = await episodesResponse.json();
+
+    // If there's only one episode, wrap it in an array to handle uniformly
+    const episodesArray = Array.isArray(episodes) ? episodes : [episodes];
+
+    // Display each episode
+    episodesArray.forEach((episode) => {
+      const episodeCard = createEpisodeCard(episode);
+      episodesList.appendChild(episodeCard);
+    });
   } catch (error) {
     console.error("Error fetching character details:", error);
   }
