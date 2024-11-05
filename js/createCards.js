@@ -1,9 +1,6 @@
 function createBaseCard() {
   const card = document.createElement("article");
   card.classList.add("card");
-  card.style.display = "inline-block";
-  card.style.width = "300px";
-  card.style.marginRight = "16px";
   return card;
 }
 

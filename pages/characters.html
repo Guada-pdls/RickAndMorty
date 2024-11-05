@@ -43,7 +43,28 @@
         </div>
       </nav>
     </header>
-    Characters
+    <main>
+      <div class="container">
+        <h1 class="title is-3 p-4 has-text-centered">Rick and Morty Characters</h1>
+        <div id="characters" class="columns is-multiline is-flex is-justify-content-center">
+          <!-- Characters will be generated here -->
+        </div>
+        <nav
+          class="pagination is-centered mb-1"
+          role="navigation"
+          aria-label="pagination"
+        >
+          <a href="#" id="pagination-previous" class="pagination-previous"
+            >Previous</a
+          >
+          <a href="#" id="pagination-next" class="pagination-next">Next</a>
+          <ul id="pagination-list" class="pagination-list"></ul>
+        </nav>
+      </div>
+    </main>
+
     <script src="../js/navbar.js"></script>
+    <script src="../js/createCards.js"></script>
+    <script src="../js/characters.js"></script>
   </body>
 </html>
