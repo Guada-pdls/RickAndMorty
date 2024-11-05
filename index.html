@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Rick and Morty | Home</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -12,12 +11,13 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
       <nav class="navbar p-2" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-          <a class="navbar-item" href="https://bulma.io">
+          <a class="navbar-item" href="/index.html">
             <img src="img/logo.png" alt="Rick and Morty logo" />
             <h4 class="title is-4 ml-2">Rick and Morty</h4>
           </a>
@@ -37,9 +37,9 @@
         </div>
 
         <div class="navbar-end navbar-menu" id="navMenu">
-          <a class="navbar-item">Episodes</a>
-          <a class="navbar-item">Characters</a>
-          <a class="navbar-item">Locations</a>
+          <a class="navbar-item" href="pages/episodes.html">Episodes</a>
+          <a class="navbar-item" href="pages/characters.html">Characters</a>
+          <a class="navbar-item" href="pages/locations.html">Locations</a>
         </div>
       </nav>
     </header>
@@ -66,20 +66,64 @@
         </div>
       </section>
       <section class="characters">
-        <h2 class="title is-4 px-2">Characters</h2>
+        <div class="is-flex is-justify-content-space-between is-align-items-center my-4">
+          <h2 class="title mb-0 is-4 px-2">Characters</h2>
+          <a href="pages/characters.html" class="button is-primary is-outlined is-flex is-align-items-center">
+            <span class="button-text">View More</span>
+            <span class="icon is-small">
+              <i class="fa-solid fa-chevron-right"></i>
+            </span>
+          </a>
+        </div>
         <div
           class="carousel-container"
           style="overflow-x: auto; white-space: nowrap; padding-bottom: 1rem" 
           id="characters"
         >
         </div>
-        <div class="has-text-centered mt-4">
-          <a href="/characters" class="button is-link">View More</a>
+      </section>
+      <section class="locations">
+        <div class="is-flex is-justify-content-space-between is-align-items-center my-4">
+          <h2 class="title is-4 px-2 mb-0">Locations</h2>
+          <a href="pages/locations.html" class="button is-primary is-outlined">
+            <span class="button-text">View More</span>
+            <span class="icon is-small">
+              <i class="fa-solid fa-chevron-right"></i>
+            </span>
+          </a>
+        </div>
+        <div
+          class="carousel-container"
+          style="overflow-x: auto; white-space: nowrap; padding-bottom: 1rem"
+          id="locations"
+        >
         </div>
       </section>
+      <section class="episodes">
+        <div class="is-flex is-justify-content-space-between is-align-items-center my-4">
+          <h2 class="title is-4 px-2 mb-0">Episodes</h2>
+          <a href="pages/episodes.html" class="button is-primary is-outlined">
+            <span class="button-text">View More</span>
+            <span class="icon is-small">
+              <i class="fa-solid fa-chevron-right"></i>
+            </span>
+          </a>
+        </div>
+        <div
+          class="carousel-container"
+          style="overflow-x: auto; white-space: nowrap; padding-bottom: 1rem"
+          id="episodes"
+        >
+        </div>
+      </section>
+      
     </main>
 
     <script src="js/navbar.js"></script>
+    <script src="js/createCards.js"></script>
+    <script src="js/fetchAndDisplayData.js"></script>
     <script src="js/characters.js"></script>
+    <script src="js/locations.js"></script>
+    <script src="js/episodes.js"></script>
   </body>
 </html>
