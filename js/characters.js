@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const card = createCharacterCard(character);
         card.addEventListener("click", () => {
           localStorage.setItem("characterId", character.id);
-          window.location.href = "../character-details.html";
+          window.location.href = "./character-details.html";
         });
         charactersSection.appendChild(card);
       });
