@@ -1,6 +1,6 @@
 function handleCharacterClick(character) {
   localStorage.setItem("characterId", character.id);
-  window.location.href = "/pages/character-details.html";
+  window.location.href = "./pages/character-details.html";
 }
 
 fetchAndDisplayData(
